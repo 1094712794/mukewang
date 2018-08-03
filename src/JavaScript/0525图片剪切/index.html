@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>图片剪切</title>
+	<link rel="stylesheet" href="./common.css">
+</head>
+<body>
+
+<div>
+	<input id="upload" type="file" hidden onchange="uploadImage(event)" />
+	<label class="file" for="upload">选择图片</label>
+</div>
+<div class="upload-box z-index1" id="uploadBox">
+	<img class="upload-image z-index2 opacity" id="uploadShow" src="./1.jpg" />
+	<img class="upload-image z-index2 clip" id="clip" src="./1.jpg" />
+	<div class="clip-wrapper z-index3" id="clipWrapper">
+		<div class="point up-left" id="leftUp"></div>
+		<div class="point up-center" id="upCenter"></div>
+		<div class="point up-right" id="rightUp"></div>
+		<div class="point right-center" id="rightCenter"></div>
+		<div class="point down-right" id="rightDown"></div>
+		<div class="point down-center" id="downCenter"></div>
+		<div class="point down-left" id="leftDown"></div>
+		<div class="point left-center" id="leftCenter"></div>
+	</div>
+</div>
+<!-- 浏览 clip 图片 -->
+<div class="preview">
+	<img src="./1.jpg" id="previewImage"/>
+</div>
+
+<script src="./jquery-2.1.0.js"></script>
+<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> --> <!-- 图片拖动jQuery插件(网址：http://jqueryui.com/download/all/) -->
+<script src="./jquery-ui-1.10.4.custom.min.js"></script>
+<script src="./common.js"></script>
+
+</body>
+</html>

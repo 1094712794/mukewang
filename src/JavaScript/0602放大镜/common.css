@@ -1,0 +1,48 @@
+.box,.small-box img,.mark{width: 400px;height: 255px;}
+.box{
+	margin: 50px;
+	position: relative;
+	border:1px solid #ccc;
+}
+.small-box{
+	position: relative;
+	z-index: 1;
+}
+.float-box{
+	display: none;
+	width: 160px;
+	height: 120px;
+	position: absolute;/* left和top在js中设置 */
+	background-color: #ffffcc;
+	border:1px solid #ccc;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	cursor: move;
+}
+
+.big-box{
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 460px;
+	width: 400px;
+	height: 300px;
+	overflow: hidden;
+	border:1px solid #ccc;
+	z-index: 1;
+}
+.big-box img{
+	position: absolute;/* left和top在js中设置 */
+	z-index: 5;
+}
+
+/* 解决IE低版本浏览器闪烁问题 */
+.mark{
+	position: absolute;
+	display: block;
+	z-index: 10;
+	cursor: move;
+	background-color: #fff;
+	filter: alpha(opacity=0);
+	opacity: 0;
+}

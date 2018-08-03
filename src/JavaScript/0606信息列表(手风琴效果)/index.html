@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>信息列表（手风琴效果(类似tab切换)）</title>
+	<link rel="stylesheet" href="./common.css">
+</head>
+<body>
+
+<ul class="list">
+	<li onmouseover="showDL(this)" onmouseout="hideDL(this)">
+		<a href="javascript:;" class="title">算一算虚度了多少个年头</a>
+		<dl>
+			<dd>仿佛足够写一套错爱的春秋</dd>
+			<dd>如果以后你还想为谁</dd>
+			<dd>浪费美好时候</dd>
+		</dl>
+	</li>
+	<li onmouseover="showDL(this)" onmouseout="hideDL(this)">
+		<a href="javascript:;" class="title">眼泪只能在我的胸膛</a>
+		<dl>
+			<dd>毫无保留</dd>
+			<dd>互相折磨到白头</dd>
+			<dd>悲伤坚决不放手</dd>
+		</dl>
+	</li>
+</ul>
+
+<script src="./jquery-2.1.0.js"></script>
+<script src="./common.js"></script>
+
+</body>
+</html>

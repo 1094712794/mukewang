@@ -1,0 +1,26 @@
+.flow-main:after{
+	content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.flow-main{
+    zoom: 1;
+	position: relative;
+	margin: 0 auto;
+}
+.flow-box{
+	padding:15px 0 0 15px;
+	float: left;
+}
+.flow-pic{
+	border:1px solid #ccc;
+	box-shadow: 0 0 5px #ccc;
+	padding:10px;
+	display: block;
+	border-radius: 5px;
+}
+.flow-pic img{
+	width: 165px;
+	height: auto;
+}

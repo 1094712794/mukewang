@@ -1,0 +1,9 @@
+.wrapper{
+	width: 460px;
+	margin: 0 auto;
+}
+.wrapper img{
+	width: 460px;
+	height: 345px;
+	display: block;
+}

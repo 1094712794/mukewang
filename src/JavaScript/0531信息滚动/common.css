@@ -1,0 +1,16 @@
+#box{
+	height: 144px;/*如果要单行滚动，修改为a的height高度(36)*/
+	width: 335px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	overflow: hidden;/*这个一定要加，超出的内容部分要隐藏，免得撑高中间部分 */
+}
+#box a{
+	display: block;
+	text-indent: 15px;
+	height:36px;
+	line-height: 36px;
+	text-decoration: none;
+	color: #333;
+}
+#box a:hover{color: #f00;}

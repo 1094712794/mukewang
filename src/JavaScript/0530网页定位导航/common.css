@@ -1,0 +1,52 @@
+/*ie6 hack*/
+* html, * html body {
+    background-image: url(about:blank);
+    background-attachment: fixed;
+}
+
+* html #menu {
+    /*position: fixed;*/
+    position: absolute;
+    top: expression(((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+100+'px');
+}
+#contect{
+	width: 800px;
+	margin: 0 auto;
+}
+#contect h2{color: #008888;}
+.item{
+	border: 1px solid #ccc;
+	padding: 10px;
+	box-sizing: border-box;
+	margin-top: 10px;
+}
+.item h3{
+	border-bottom: 1px solid #ff0000;
+}
+.item-ul{width: 100%;}
+.item-ul a{
+	display: inline-block;
+	width: 32%;
+	height: 220px;
+	background-color: #ccc;
+}
+
+#menu{
+	position: fixed;
+	top: 123px;
+	left: 50%;/*距离左边50%*/
+	margin-left: 400px;/*contect宽度的一半，刚好、定位在contect框右侧*/
+}
+#menu a{
+	display: block;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	color: #333;
+}
+#menu a:hover,
+#menu a.current{
+	color: #fff;
+	background-color: #0088bb;
+}

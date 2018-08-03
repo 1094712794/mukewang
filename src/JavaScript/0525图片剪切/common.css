@@ -1,0 +1,78 @@
+.file{
+	background-color: #f0f0f0;
+	width: 320px;
+	line-height: 40px;
+	display: block;
+	text-align: center;
+}
+
+.z-index1{z-index: 1;}
+.z-index2{z-index: 2;}
+.z-index3{z-index: 3;}
+.upload-box{
+	position: absolute;
+	top: 200px;
+	left: 300px;
+	width: 460px;
+	height: 360px;
+}
+.upload-image{
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;/*必须定位，否则clip没用*/
+	top: 0;
+	left: 0;
+}
+.opacity{opacity: 0.6;}
+.clip{
+	/*clip: rect(top,right,bottom,left);*/
+	clip: rect(0px,20px,100px,100px);/*裁剪图片*/
+}
+
+.clip-wrapper{
+	width: 200px;
+	height: 200px;
+	border: 1px solid #fff;
+	position: absolute;
+	/*box-sizing: border-box;*/ /*加上这句代码 top 和 left 拉伸的时候，会出现(top和bottom、left和right同时被拉伸)bug*/
+	cursor: move;
+}
+.point{
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	font-size: 0;
+	background-color: #fff;
+}
+.up-left,.up-center,.up-right{top: -4px;}
+.up-left,.left-center,.down-left{left: -4px;}
+.down-left,.down-center,.down-right{bottom: -4px;}
+.up-right,.right-center,.down-right{right: -4px;}
+.up-center,.down-center{left: 50%;margin-left: -4px;}
+.right-center,.left-center{top: 50%;margin-top: -4px;}
+
+.up-left{cursor: nw-resize;}
+.up-center{cursor: n-resize;}
+.up-right{cursor: ne-resize;}
+.right-center{cursor: e-resize;}
+.down-right{cursor: se-resize;}
+.down-center{cursor: s-resize;}
+.down-left{cursor: sw-resize;}
+.left-center{cursor: w-resize;}
+
+/* 浏览 clip 图片 */
+.preview{
+	position: absolute;
+	top: 200px;
+	left: 800px;
+	width: 460px;
+	height: 360px;
+}
+.preview img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
