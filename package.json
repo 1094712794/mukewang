@@ -1,0 +1,22 @@
+{
+  "name": "mukewang",
+  "version": "1.0.0",
+  "description": "开启 “imooc” 之旅。",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1094712794/mukewang.git"
+  },
+  "keywords": [
+    "mukewang"
+  ],
+  "author": "https://github.com/1094712794",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1094712794/mukewang/issues"
+  },
+  "homepage": "https://github.com/1094712794/mukewang#readme"
+}
