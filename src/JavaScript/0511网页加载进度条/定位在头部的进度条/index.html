@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>网页加载进度条——定位在头部的进度条</title>
+	<link rel="stylesheet" href="./common.css">
+	<script src="../jquery/jquery-2.1.0.js"></script>
+</head>
+<body>
+
+<div class="loading-wrapper">
+	<div class="loading"></div>
+</div>
+
+<header>
+	<img src="http://pic1.win4000.com/wallpaper/9/596c6818ea0a3.jpg" alt="" />
+	<img src="http://file02.16sucai.com/d/file/2015/0314/903879b6c2c725ec3eb94f96d1a5e03e.jpg" alt="" />
+</header>
+<script>
+	$('.loading').animate({width:"10%"},100);
+</script>
+
+<section>
+	<img src="http://pic1.win4000.com/wallpaper/9/596c6818ea0a3.jpg" alt="" />
+	<img src="http://file02.16sucai.com/d/file/2015/0314/903879b6c2c725ec3eb94f96d1a5e03e.jpg" alt="" />
+</section>
+<script>
+	$('.loading').animate({width:"70%"},100);
+</script>
+
+<footer>
+	<img src="http://pic1.win4000.com/wallpaper/9/596c6818ea0a3.jpg" alt="" />
+	<img src="http://file02.16sucai.com/d/file/2015/0314/903879b6c2c725ec3eb94f96d1a5e03e.jpg" alt="" />
+</footer>
+<script>
+	$('.loading').animate({width:"100%"},100,function(){
+		$('.loading-wrapper').fadeOut();
+	});
+</script>
+
+</body>
+</html>
