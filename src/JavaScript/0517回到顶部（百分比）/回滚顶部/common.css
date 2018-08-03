@@ -1,0 +1,13 @@
+.scrollTop{
+	position: fixed;
+	bottom: 60px;
+	right: 60px;
+	z-index: 10;
+	width: 40px;
+	height: 40px;
+	background: url(./top_bg.png) no-repeat left top;
+	display: none;
+}
+.scrollTop:hover{
+	background: url(./top_bg.png) no-repeat left -40px;
+}
