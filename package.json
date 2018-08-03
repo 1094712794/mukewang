@@ -4,7 +4,9 @@
   "description": "开启 “imooc” 之旅。",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "webpack",
+    "example":"http-server -p 8880"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/1094712794/mukewang/issues"
   },
-  "homepage": "https://github.com/1094712794/mukewang#readme"
+  "homepage": "https://github.com/1094712794/mukewang#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0"
+  }
 }
