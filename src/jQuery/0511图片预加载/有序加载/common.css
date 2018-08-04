@@ -1,0 +1,18 @@
+.box{
+	text-align: center;
+}
+.btn{
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	color: #000;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	padding: 0 30px;
+	margin: 60px 20px;
+}
+.btn:hover{
+	color: #F01414;
+	background-color: #eee;
+}

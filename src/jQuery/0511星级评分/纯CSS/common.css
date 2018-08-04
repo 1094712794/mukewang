@@ -1,0 +1,55 @@
+.rating{
+	position: relative;
+	width:165px;
+	height: 33px;
+	background: url(./star.png) repeat-x;
+	margin: 100px auto 10px;
+	overflow: hidden;/* 隐藏 input[type="radio"] */
+}
+.rating:hover .rating-item{background-image: none;}
+.rating-item{
+	position: absolute;
+	top: 0;
+	z-index: 3;
+	width:33px;
+	height: 33px;
+}
+.rating-item:hover{background: url(./star.png) repeat-x 0 -33px !important;}
+
+.rating-item-1,#rating-1{left: 0;}
+.rating-item-2,#rating-2{left: 33px;}
+.rating-item-3,#rating-3{left: 66px;}
+.rating-item-4,#rating-4{left: 99px;}
+.rating-item-5,#rating-5{left: 132px;}
+
+.rating-item:hover{
+	left: 0;
+	z-index: 2;
+	background: url(./star.png) repeat-x 0 -33px;
+}
+input[type="radio"]:checked + .rating-item{
+	left: 0;
+	z-index: 1;
+	background: url(./star.png) repeat-x 0 -33px;
+}
+/*当选择了星星，往回滑动星星变暗*/
+/*input[type="radio"]:checked + .rating-item ~ .rating-item:hover{z-index: 0;}*/
+
+.rating-item-1:hover,#rating-1:checked + .rating-item{width: 33px;}
+.rating-item-2:hover,#rating-2:checked + .rating-item{width: 66px;}
+.rating-item-3:hover,#rating-3:checked + .rating-item{width: 99px;}
+.rating-item-4:hover,#rating-4:checked + .rating-item{width: 132px;}
+.rating-item-5:hover,#rating-5:checked + .rating-item{width: 165px;}
+
+.rating-item label{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	cursor: pointer;
+}
+input[type="radio"]{position: absolute;left: 0;top: -20px;}
+
+input[type="submit"]{
+	display: block;
+	margin: 30px auto;
+}

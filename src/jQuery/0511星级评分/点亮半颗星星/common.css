@@ -1,0 +1,29 @@
+ul,li{margin: 0;padding: 0;list-style: none;}
+
+.rating,.rating-display{background: url(./star.png) repeat-x;}
+.rating{
+	position: relative;
+	width:165px;
+	height: 33px;
+	margin: 100px auto;
+}
+.rating-display{
+	width: 0;/*随意的，传入 33px 的倍数点亮整颗星星，0.5倍点亮半颗星星*/
+	height: 33px;
+	background-position: 0 -33px;
+}
+.rating-mask{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.rating-item{
+	float: left;
+	width: 33px;
+	height: 33px;
+	cursor: pointer;
+	/*自定义*/
+	/*background: url(./star.png) no-repeat;
+	background-position: 0 0;*/
+}
