@@ -1,0 +1,56 @@
+body{margin: 0;padding: 0;}
+ul,li{list-style-type: none;margin: 0;padding:0;}
+a{text-decoration: none;color: #000;}
+p{margin:0;padding:0;}
+
+
+.register-wrapper{
+	width:900px;
+	margin:60px auto;
+	border:1px solid #ccc;
+	padding:20px;
+}
+.register-wrapper li{height: 50px;margin-top: 16px;}
+.register-wrapper input{height: 20px;outline: none;border:1px solid #ccc;}
+.register-wrapper input.promptBorder{border:1px solid #f00;}
+.register-text{
+	width:80px;
+	display: inline-block;
+	font-size: 16px;
+}
+.register-wrapper .register-submit{
+	width:20%;
+	height: 34px;
+	line-height: 34px;
+	display:block;
+	margin-left: 80px;
+	margin-top:20px;
+	cursor: pointer;
+}
+.register-hint{
+	font-size: 12px;
+	font-weight: normal;
+	color: #999;
+}
+.register-hint.promptColor{color:#f00;}
+.register-number{
+	line-height: 20px;
+	color: #999;
+	font-size:14px;
+	padding-left:80px;
+}
+.password-grade{padding-left:80px;font-size: 0;padding-top: 6px;}
+.password-grade .grade{
+	width:57px;
+	height:26px;
+	line-height:26px;
+	display: inline-block;
+	background-color:#ffad0e;
+	text-align: center;
+	color:#fff;
+	font-size: 14px;
+	border:1px solid #fff;
+	box-sizing: border-box;
+}
+.password-grade .grade.current{background-color: #ff3b0e;}
+.regInputPassword{background-color: #eee;}

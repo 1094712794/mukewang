@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>购物车</title>
+	<link rel="stylesheet" href="./common.css">
+</head>
+<body>
+
+<table id="cartTable" class="cartTable">
+    <thead>
+        <tr>
+            <th><label><input class="check-all check" type="checkbox"/>&nbsp;全选</label></th>
+            <th>商品</th>
+            <th>单价</th>
+            <th>数量</th>
+            <th>小计</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+            <td class="goods"><img src="https://img.alicdn.com/bao/uploaded/i1/263817957/TB23T4Wc5CYBuNkSnaVXXcMsVXa-263817957.jpg_80x80.jpg" alt=""/><span>Casio/卡西欧 EX-TR350</span></td>
+            <td class="price">5999.88</td>
+            <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+            <td class="subtotal">5999.88</td>
+            <td class="operation"><span class="delete">删除</span></td>
+        </tr>
+        <tr>
+            <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+            <td class="goods"><img src="https://img.alicdn.com/bao/uploaded/TB1Dx80t1GSBuNjSspbL6UiipXa_80x80.jpg" alt=""/><span>Canon/佳能 PowerShot SX50 HS</span></td>
+            <td class="price">3888.50</td>
+            <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+            <td class="subtotal">3888.50</td>
+            <td class="operation"><span class="delete">删除</span></td>
+        </tr>
+        <tr>
+            <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+            <td class="goods"><img src="https://img.alicdn.com/bao/uploaded/i2/722968295/TB1Y_UJmQyWBuNjy0FpXXassXXa_!!0-item_pic.jpg_80x80.jpg" alt=""/><span>Sony/索尼 DSC-WX300</span></td>
+            <td class="price">1428.50</td>
+            <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+            <td class="subtotal">1428.50</td>
+            <td class="operation"><span class="delete">删除</span></td>
+        </tr>
+        <tr>
+            <td class="checkbox"><input class="check-one check" type="checkbox"/></td>
+            <td class="goods"><img src="https://img.alicdn.com/bao/uploaded/i2/188124207/TB2r5PiihSYBuNjSspjXXX73VXa_!!188124207.jpg_80x80.jpg" alt=""/><span>Fujifilm/富士 instax mini 25</span></td>
+            <td class="price">640.60</td>
+            <td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+            <td class="subtotal">640.60</td>
+            <td class="operation"><span class="delete">删除</span></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="foot" id="foot">
+    <label class="fl select-all"><input type="checkbox" class="check-all check"/>&nbsp;全选</label>
+    <a class="fl delete" id="deleteAll" href="javascript:;">删除</a>
+    <div class="fr closing">结 算</div>
+    <div class="fr total">合计：￥<span id="priceTotal">0.00</span></div>
+    <div class="fr selected" id="selected">已选商品<span id="selectedTotal">0</span>件<span class="arrow up">︽</span><span class="arrow down">︾</span></div>
+    <div class="selected-view">
+        <div id="selectedViewList" class="clearfix">
+            <!-- <div><img src="" /><span>取消选择</span></div> -->
+        </div>
+        <span class="arrow">◆<span>◆</span></span>
+    </div>
+</div>
+
+<script src="./common.js"></script>
+
+</body>
+</html>

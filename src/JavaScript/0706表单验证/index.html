@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>表单验证（正则表达式）</title>
+	<link rel="stylesheet" href="./common.css">
+</head>
+<body>
+
+<form action="" class="register-wrapper">
+	<ul>
+		<li>
+			<span class="register-text">会员名：</span><input id="regInputName" type="text" />
+			<strong class="register-hint" id="regNameHint"></strong>
+			<p class="register-number" id="regNumber"></p>
+		</li>
+		<li>
+			<span class="register-text">密码：</span><input id="regInputPass" type="password" />
+			<strong class="register-hint" id="regPassHint"></strong>
+			<div class="password-grade" id="passwordGrade">
+				<span class="grade current">弱</span>
+				<span class="grade">中</span>
+				<span class="grade">强</span>
+			</div>
+		</li>
+		<li>
+			<!-- 
+				disabled和readonly的区别： 
+				disabled会使文本框变灰，而且通过request.getParameter("name")得不到文本框中的内容（如果有的话）
+				readonly只是使文本框不能输入，外观没有变化，而且通过request.getParameter("name")可以得到内容
+			-->
+			<span class="register-text">确认密码：</span><input class="regInputPassword" id="regInputPassword" disabled="true" type="password" />
+			<strong class="register-hint" id="regPasswordHint"></strong>
+		</li>
+	</ul>
+	<input type="submit" value="注册" class="register-submit" />
+</form>
+
+<script src="./common.js"></script>
+
+</body>
+</html>
