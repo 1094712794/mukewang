@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>五角星</title>
+</head>
+<body>
+
+<canvas id="canvas" style="border:1px solid #aaa;display:block;margin:50px auto;">
+    当前浏览器不支持Canvas，请更换浏览器后再试
+</canvas>
+
+<script>
+    window.onload = function() {
+        var canvas = document.getElementById("canvas"),
+            context = canvas.getContext('2d');
+
+        canvas.width = 800;
+        canvas.height = 800;
+
+        context.lineWidth = 10;
+        
+        context.lineJoin='miter'; // 线条和线条相交呈现的形态（miter(default)、bevel、round）
+        // 当小圆半径为30的时候，默认值10，只有lineJoin为miter时才有效；线条与线条相接所产生的内角与外角距离的最大值， 超出最大值以bevel显示
+        context.miterLimit=20;
+        
+        drawStar(context,300,30,400,400,0);
+        // drawStar(context,300,150,400,400,0);
+    }
+    /**
+     * cxt：上下文
+     * R、r：半径
+     * x、y：偏移量
+     * rot：旋转角度
+     */
+    function drawStar(cxt, R, r, x, y, rot) {
+        cxt.beginPath(); //进行一个全新的绘制，指定一个新的路径
+        for (var i = 0; i < 5; i++) {
+            /**
+             * 分析：角度制
+             * 编程：角度转弧度（Math.cos()）
+             * 角度转弧度的过程：Math.cos((18+i*72)/180*Math.PI
+             * 大圆半径：300
+             * 坐标基于(0,0)，位移400，也就是在画布(800,800)中间
+             */
+            cxt.lineTo(
+                Math.cos((18 + i * 72 - rot) / 180 * Math.PI) * R + x, 
+                -Math.sin((18 + i * 72 - rot) / 180 * Math.PI) * R + y
+            ); //大圆
+            cxt.lineTo(
+                Math.cos((54 + i * 72 - rot) / 180 * Math.PI) * r + x, 
+                -Math.sin((54 + i * 72 - rot) / 180 * Math.PI) * r + y
+            ); //小圆
+        }
+        cxt.closePath(); //当前路径被封闭，同时也结束
+        cxt.stroke();
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>图形变换-translate</title>
+</head>
+<body>
+
+<canvas id="canvas" style="border:1px solid #aaa;display:block;margin:50px auto;">
+    当前浏览器不支持Canvas，请更换浏览器后再试
+</canvas>
+
+<script>
+    window.onload = function() {
+        var canvas = document.getElementById("canvas"),
+            context = canvas.getContext('2d');
+            
+        canvas.width = 800;
+        canvas.height = 800;
+
+        /**
+         * 图形变换:
+         * 位移:translate(x,y) 也就是坐标系变换
+         * 旋转:rotate(deg)
+         * 缩放:scale(sx,sy)
+         */
+        context.save(); //保存当前图形状态(save和restore成对出现)
+        context.fillStyle = '#e8e8e8'; //填充色
+        context.translate(100, 100); //位移
+        context.fillRect(0, 0, 400, 400); //绘制矩形
+        context.restore(); //将返回在 save 节点的时候所有状态
+
+        context.save();
+        context.fillStyle = '#fb5';
+        context.translate(300, 300);
+        context.fillRect(0, 0, 400, 400);
+        context.restore();
+    }
+</script>
+
+</body>
+</html>

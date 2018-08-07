@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>一片天空</title>
+</head>
+<body>
+
+<canvas id="canvas" style="border:1px solid #aaa;display:block;margin:50px auto;">
+    当前浏览器不支持Canvas，请更换浏览器后再试
+</canvas>
+
+<script>
+    window.onload = function() {
+        var canvas = document.getElementById("canvas"),
+            context = canvas.getContext('2d');
+
+        canvas.width = 800;
+        canvas.height = 800;
+
+        context.fillStyle='#000';//canvas填充色
+        context.fillRect(0,0,canvas.width,canvas.height); //绘制填充矩形       
+        
+        for (var i = 0; i < 200; i++) {
+            var R = Math.random() * 10 + 2, //产生10~2之间的随机数
+                cWidth = Math.random() * canvas.width,
+                cHeight = Math.random() * canvas.height,
+                rotDeg = Math.random() * 360; //产生0~360deg之间的随机数
+            drawStar(context, R, cWidth, cHeight, rotDeg);
+        }
+    }
+    /**
+     * cxt：上下文
+     * R、r：半径
+     * x、y：偏移量
+     * rot：旋转角度
+     */
+    function drawStar(cxt, R, x, y, rot) {
+        cxt.save(); //保存当前图形状态(save和restore成对出现)
+
+        cxt.translate(x, y); //位移
+        cxt.rotate(rot / 180 * Math.PI); //旋转
+        cxt.scale(R, R); //缩放
+        
+        starPath(cxt);
+
+        cxt.fillStyle = '#fb3'; //填充色
+        cxt.fill(); //填充
+
+        cxt.restore(); //将返回在 save 节点的时候所有状态
+    }
+    /**
+     * 绘制五角星路径
+     */
+    function starPath(cxt){
+        cxt.beginPath();
+        for(var i=0;i<5;i++){
+            /**
+             * 分析：角度制
+             * 编程：角度转弧度（Math.cos()）
+             * 角度转弧度的过程：Math.cos((18+i*72)/180*Math.PI
+             * 大圆半径：300
+             * 坐标基于(0,0)，位移400，也就是在画布(800,800)中间
+             */
+            cxt.lineTo(
+                Math.cos((18 + i * 72) / 180 * Math.PI), 
+                -Math.sin((18 + i * 72) / 180 * Math.PI)
+            ); //大圆
+            cxt.lineTo(
+                Math.cos((54 + i * 72) / 180 * Math.PI) * 0.5, 
+                -Math.sin((54 + i * 72) / 180 * Math.PI) * 0.5
+            ); //小圆
+        }
+        cxt.closePath();
+    }
+</script>
+
+</body>
+</html>

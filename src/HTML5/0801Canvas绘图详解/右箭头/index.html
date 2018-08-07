@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>右箭头</title>
+</head>
+<body>
+
+<canvas id="canvas" style="border:1px solid #aaa;display:block;margin:50px auto;">
+    当前浏览器不支持Canvas，请更换浏览器后再试
+</canvas>
+
+<script>
+    window.onload = function(){
+        var canvas = document.getElementById("canvas"),
+        	context=canvas.getContext('2d');
+
+        canvas.width = 800;
+        canvas.height = 800;
+        
+        // 状态设置【canvas是基于状态绘制环境，而(canvas)不是基于对象的绘制环境】
+        context.lineWidth=6;
+        
+        context.beginPath();//进行一个全新的绘制，指定一个新的路径
+        context.moveTo(100,200);
+        context.lineTo(300,400);
+        context.lineTo(100,600);
+        context.strokeStyle='red';
+        context.stroke();//绘制
+
+        context.beginPath();
+        context.moveTo(300,200);
+        context.lineTo(500,400);
+        context.lineTo(300,600);
+        context.strokeStyle='green';
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(500,200);
+        context.lineTo(700,400);
+        context.lineTo(500,600);
+        context.strokeStyle='blue';
+        context.stroke();
+    }
+</script>
+
+</body>
+</html>

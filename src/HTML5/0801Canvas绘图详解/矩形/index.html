@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>矩形</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+
+<canvas id="canvas" style="border:1px solid #aaa;display:block;margin:50px auto;">
+    当前浏览器不支持Canvas，请更换浏览器后再试
+</canvas>
+
+<script>
+    window.onload = function() {
+    	var canvas = document.getElementById("canvas"),
+    		context = canvas.getContext('2d');
+
+    	canvas.width = 800;
+    	canvas.height = 800;
+
+		drawRect2(context, 100, 100, 400, 400, 10, '#ccc', '#eee')
+	}
+
+    function drawRect(cxt, x, y, width, height, borderWidth, borderColor, fillColor) {
+    	cxt.beginPath(); //进行一个全新的绘制，指定一个新的路径
+
+    	// 状态设置【canvas是基于状态绘制环境，而(canvas)不是基于对象的绘制环境】
+    	cxt.moveTo(x, y);
+    	cxt.lineTo(x + width, y);
+    	cxt.lineTo(x + width, y + height);
+    	cxt.lineTo(x, y + height);
+    	/**
+    	 *   ||
+		 * 等价于
+		 *   ||
+    	 */
+    	cxt.rect(x, y, width, height);
+
+    	cxt.closePath();//当前路径被封闭，同时也结束
+
+    	cxt.fillStyle=fillColor;
+    	cxt.fill();//填充
+
+    	cxt.lineWidth=borderWidth;
+    	cxt.strokeStyle=borderColor;
+    	cxt.stroke();//绘制
+    }
+
+    function drawRect2(cxt, x, y, width, height, borderWidth, borderColor, fillColor) {
+    	/**
+    	 * strokeStyle 和 fillStyle 颜色值：
+    	 * #ffffff  #642  rba(255,128,0)  rgba(100,100,100,0.8)  hsl(20,62%,28%)  hsla(40,82%,33%,0.6)
+    	 */
+    	cxt.lineWidth=borderWidth;
+    	cxt.strokeStyle=borderColor;
+    	cxt.fillStyle=fillColor;
+
+    	cxt.fillRect( x, y, width, height);//填充
+    	cxt.strokeRect( x, y, width, height);//绘制
+    }
+</script>
+</body>
+</html>
